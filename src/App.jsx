@@ -6,7 +6,7 @@ import Navbar from './components/Navbar'
 import Product from './page/Product'
 import { Route, Routes} from 'react-router-dom'
 import ProductDetail from './page/ProductDetail'
-import Footer from './components/footer'
+import Footer from './components/Footer'
 
 function App() {
 

@@ -26,7 +26,7 @@ const Navbar = () => {
       <AppBar position="static">
         <Toolbar sx={{ justifyContent: 'center' }}>
           <Typography variant="h6" sx={{ flexGrow: 1, position: 'absolute', left: 20 }}>
-            MyApp
+           Fake Store
           </Typography>
 
           {isMobile ? (
