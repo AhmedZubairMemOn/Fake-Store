@@ -26,7 +26,7 @@ const Navbar = () => {
       <AppBar position="static">
         <Toolbar sx={{ justifyContent: 'center' }}>
           <Typography variant="h6" sx={{ flexGrow: 1, position: 'absolute', left: 20 }}>
-           Fake Store
+            Fake Store
           </Typography>
 
           {isMobile ? (
@@ -47,27 +47,44 @@ const Navbar = () => {
               >
                 <Box sx={{ width: 250 }} onClick={() => setDrawerOpen(false)}>
                   <List>
-                    {menuItems.map((text) => (
-                      <ListItem button key={text}>
-                        <ListItemText primary={text} />
-                      </ListItem>
-                    ))}
+                    {menuItems.map((text) =>
+                      text === 'Home' ? (
+                        <ListItem
+                          button
+                          key={text}
+                          component={Link}
+                          to="/"
+                        >
+                          <ListItemText primary={text} />
+                        </ListItem>
+                      ) : (
+                        <ListItem button key={text}>
+                          <ListItemText primary={text} />
+                        </ListItem>
+                      )
+                    )}
                   </List>
                 </Box>
               </Drawer>
             </>
           ) : (
             <>
-              {menuItems.map((text) => (
-                <Button
-                  key={text}
-                  color="inherit"
-                  component={Link}
-                  to={text === 'Home' ? '/' : `/${text.toLowerCase()}`}
-                >
-                  {text}
-                </Button>
-              ))}
+              {menuItems.map((text) =>
+                text === 'Home' ? (
+                  <Button
+                    key={text}
+                    color="inherit"
+                    component={Link}
+                    to="/"
+                  >
+                    {text}
+                  </Button>
+                ) : (
+                  <Button key={text} color="inherit">
+                    {text}
+                  </Button>
+                )
+              )}
             </>
           )}
         </Toolbar>
